@@ -1,140 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viajes y Turismo</title>
-  <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viajes y Turismo</title>
+<style>
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body { line-height: 1.6; background-color: #f0f4f8; color: #333; }
 
-    body { line-height: 1.6; background-color: #f8f8f8; color: #333; }
+/* Header */
+header { background: linear-gradient(135deg, #ff7e5f, #feb47b); color: white; padding: 20px 0; text-align: center; }
+header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);}
+nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+nav a:hover { text-decoration: underline; transform: scale(1.1); }
 
-    header { background-color: #009688; color: white; padding: 20px 0; text-align: center; }
-    header h1 { font-size: 2rem; margin-bottom: 10px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+/* Banner */
+.banner { background: url('https://source.unsplash.com/1600x500/?travel,adventure') center/cover no-repeat; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 3px 3px 6px #000; }
+.banner h2 { font-size: 3rem; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; }
 
-    section { padding: 40px 20px; max-width: 1200px; margin: auto; }
-    h2 { margin-bottom: 20px; color: #009688; }
+/* Secciones */
+section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+h2 { margin-bottom: 30px; color: #ff7e5f; text-align: center; font-size: 2rem; }
 
-    /* Banner */
-    .banner { background: url('https://source.unsplash.com/1600x500/?travel') center/cover no-repeat; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px #000; }
-    .banner h2 { font-size: 2.5rem; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 10px; }
+/* Destinos */
+.destinos { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.destino { background: white; border-radius: 15px; overflow: hidden; width: 320px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+.destino:hover { transform: translateY(-5px); }
+.destino img { width: 100%; height: 220px; object-fit: cover; }
+.destino .info { padding: 20px; text-align: center; }
+.destino button { background: #ff7e5f; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.destino button:hover { background: #feb47b; }
 
-    /* Destinos */
-    .destinos { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .destino { background: white; border-radius: 10px; overflow: hidden; width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .destino img { width: 100%; height: 200px; object-fit: cover; }
-    .destino .info { padding: 15px; }
-    .destino button { background: #009688; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
-    .destino button:hover { background: #00796b; }
+/* Experiencias */
+.experiencias { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.experiencia { background: white; padding: 20px; border-radius: 15px; width: 270px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+.experiencia:hover { transform: translateY(-5px); }
+.experiencia img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
 
-    /* Experiencias */
-    .experiencias { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .experiencia { background: white; padding: 15px; border-radius: 10px; width: 250px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .experiencia img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+/* Formulario */
+form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; }
+button[type="submit"] { background: #ff7e5f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+button[type="submit"]:hover { background: #feb47b; }
 
-    /* Formulario */
-    form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
-    input, textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
-    button[type="submit"] { background: #009688; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
-    button[type="submit"]:hover { background: #00796b; }
+/* Footer */
+footer { background: #333; color: white; text-align: center; padding: 25px; margin-top: 50px; }
+footer a { color: #ff7e5f; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
 
-    /* Footer */
-    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    footer a { color: #009688; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    @media(max-width: 768px) {
-      .destinos, .experiencias { flex-direction: column; align-items: center; }
-    }
-  </style>
+/* Responsive */
+@media(max-width: 768px) {
+  .destinos, .experiencias { flex-direction: column; align-items: center; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Explora el Mundo</h1>
-    <nav>
-      <a href="#destinos">Destinos</a>
-      <a href="#experiencias">Experiencias</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <h1>Explora el Mundo</h1>
+  <nav>
+    <a href="#destinos">Destinos</a>
+    <a href="#experiencias">Experiencias</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h2>Vive aventuras inolvidables</h2>
-  </section>
+<!-- Banner -->
+<section class="banner">
+  <h2>Vive aventuras inolvidables</h2>
+</section>
 
-  <!-- Destinos -->
-  <section id="destinos">
-    <h2>Destinos Populares</h2>
-    <div class="destinos">
-      <div class="destino">
-        <img src="https://source.unsplash.com/400x300/?paris" alt="París">
-        <div class="info">
-          <h3>París, Francia</h3>
-          <p>La ciudad del amor y la gastronomía.</p>
-          <button>Ver más</button>
-        </div>
-      </div>
-      <div class="destino">
-        <img src="https://source.unsplash.com/400x300/?machupicchu" alt="Machu Picchu">
-        <div class="info">
-          <h3>Machu Picchu, Perú</h3>
-          <p>Explora la historia de los Incas.</p>
-          <button>Ver más</button>
-        </div>
-      </div>
-      <div class="destino">
-        <img src="https://source.unsplash.com/400x300/?tokyo" alt="Tokio">
-        <div class="info">
-          <h3>Tokio, Japón</h3>
-          <p>Tecnología, tradición y cultura pop.</p>
-          <button>Ver más</button>
-        </div>
+<!-- Destinos -->
+<section id="destinos">
+  <h2>Destinos Populares</h2>
+  <div class="destinos">
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?paris" alt="París">
+      <div class="info">
+        <h3>París, Francia</h3>
+        <p>La ciudad del amor y la gastronomía.</p>
+        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
       </div>
     </div>
-  </section>
-
-  <!-- Experiencias -->
-  <section id="experiencias">
-    <h2>Experiencias</h2>
-    <div class="experiencias">
-      <div class="experiencia">
-        <img src="https://source.unsplash.com/250x150/?hiking" alt="Trekking">
-        <h3>Trekking en los Andes</h3>
-      </div>
-      <div class="experiencia">
-        <img src="https://source.unsplash.com/250x150/?food" alt="Gastronomía">
-        <h3>Tours gastronómicos en Italia</h3>
-      </div>
-      <div class="experiencia">
-        <img src="https://source.unsplash.com/250x150/?cruise" alt="Crucero">
-        <h3>Cruceros por el Caribe</h3>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?machupicchu" alt="Machu Picchu">
+      <div class="info">
+        <h3>Machu Picchu, Perú</h3>
+        <p>Explora la historia de los Incas.</p>
+        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
       </div>
     </div>
-  </section>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?tokyo" alt="Tokio">
+      <div class="info">
+        <h3>Tokio, Japón</h3>
+        <p>Tecnología, tradición y cultura pop.</p>
+        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <textarea placeholder="Mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<!-- Experiencias -->
+<section id="experiencias">
+  <h2>Experiencias</h2>
+  <div class="experiencias">
+    <div class="experiencia">
+      <img src="https://source.unsplash.com/250x150/?hiking" alt="Trekking">
+      <h3>Trekking en los Andes</h3>
+    </div>
+    <div class="experiencia">
+      <img src="https://source.unsplash.com/250x150/?food" alt="Gastronomía">
+      <h3>Tours gastronómicos en Italia</h3>
+    </div>
+    <div class="experiencia">
+      <img src="https://source.unsplash.com/250x150/?cruise" alt="Crucero">
+      <h3>Cruceros por el Caribe</h3>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Explora el Mundo. Síguenos en 
-      <a href="#">Instagram</a> | <a href="#">Facebook</a>
-    </p>
-  </footer>
+<!-- Contacto -->
+<section id="contacto">
+  <h2>Contacto</h2>
+  <form>
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo" required>
+    <textarea placeholder="Mensaje" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Explora el Mundo. Síguenos en 
+    <a href="#">Instagram</a> | <a href="#">Facebook</a>
+  </p>
+</footer>
 
 </body>
 </html>
