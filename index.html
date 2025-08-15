@@ -1,144 +1,420 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viajes y Turismo</title>
-<style>
-/* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-body { line-height: 1.6; background-color: #f0f4f8; color: #333; }
-
-/* Header */
-header { background: linear-gradient(135deg, #ff7e5f, #feb47b); color: white; padding: 20px 0; text-align: center; }
-header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);}
-nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-nav a:hover { text-decoration: underline; transform: scale(1.1); }
-
-/* Banner */
-.banner { background: url('https://source.unsplash.com/1600x500/?travel,adventure') center/cover no-repeat; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 3px 3px 6px #000; }
-.banner h2 { font-size: 3rem; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; }
-
-/* Secciones */
-section { padding: 50px 20px; max-width: 1200px; margin: auto; }
-h2 { margin-bottom: 30px; color: #ff7e5f; text-align: center; font-size: 2rem; }
-
-/* Destinos */
-.destinos { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
-.destino { background: white; border-radius: 15px; overflow: hidden; width: 320px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
-.destino:hover { transform: translateY(-5px); }
-.destino img { width: 100%; height: 220px; object-fit: cover; }
-.destino .info { padding: 20px; text-align: center; }
-.destino button { background: #ff7e5f; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-.destino button:hover { background: #feb47b; }
-
-/* Experiencias */
-.experiencias { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
-.experiencia { background: white; padding: 20px; border-radius: 15px; width: 270px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.3s; }
-.experiencia:hover { transform: translateY(-5px); }
-.experiencia img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
-
-/* Formulario */
-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; }
-button[type="submit"] { background: #ff7e5f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-button[type="submit"]:hover { background: #feb47b; }
-
-/* Footer */
-footer { background: #333; color: white; text-align: center; padding: 25px; margin-top: 50px; }
-footer a { color: #ff7e5f; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* Responsive */
-@media(max-width: 768px) {
-  .destinos, .experiencias { flex-direction: column; align-items: center; }
-}
-</style>
-</head>
-<body>
-
-<!-- Header -->
-<header>
-  <h1>Explora el Mundo</h1>
-  <nav>
-    <a href="#destinos">Destinos</a>
-    <a href="#experiencias">Experiencias</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
-
-<!-- Banner -->
-<section class="banner">
-  <h2>Vive aventuras inolvidables</h2>
-</section>
-
-<!-- Destinos -->
-<section id="destinos">
-  <h2>Destinos Populares</h2>
-  <div class="destinos">
-    <div class="destino">
-      <img src="https://source.unsplash.com/400x300/?paris" alt="París">
-      <div class="info">
-        <h3>París, Francia</h3>
-        <p>La ciudad del amor y la gastronomía.</p>
-        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
-      </div>
-    </div>
-    <div class="destino">
-      <img src="https://source.unsplash.com/400x300/?machupicchu" alt="Machu Picchu">
-      <div class="info">
-        <h3>Machu Picchu, Perú</h3>
-        <p>Explora la historia de los Incas.</p>
-        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
-      </div>
-    </div>
-    <div class="destino">
-      <img src="https://source.unsplash.com/400x300/?tokyo" alt="Tokio">
-      <div class="info">
-        <h3>Tokio, Japón</h3>
-        <p>Tecnología, tradición y cultura pop.</p>
-        <button onclick="window.open('https://wa.me/3541216834','_blank')">Ver más</button>
-      </div>
-    </div>
+<!-- ===== Allá Vamos Viajes y Turismo — Bloque único para Google Sites ===== -->
+<div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; line-height:1.5; color:#2c3e50;">
+  <!-- Barra de navegación interna -->
+  <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center; padding:10px 14px; border:1px solid #ececec; border-radius:10px; background:#ffffff; position:sticky; top:0; z-index:5;">
+    <a href="#inicio" style="text-decoration:none; color:#e67e22; font-weight:600;">Inicio</a>
+    <a href="#beneficios" style="text-decoration:none; color:#34495e;">Por qué elegirnos</a>
+    <a href="#paquetes" style="text-decoration:none; color:#34495e;">Paquetes</a>
+    <a href="#galeria" style="text-decoration:none; color:#34495e;">Galería</a>
+    <a href="#testimonios" style="text-decoration:none; color:#34495e;">Experiencias</a>
+    <a href="#reservar" style="text-decoration:none; color:#34495e;">Reservar</a>
+    <a href="#contacto" style="text-decoration:none; color:#34495e;">Contacto</a>
   </div>
-</section>
 
-<!-- Experiencias -->
-<section id="experiencias">
-  <h2>Experiencias</h2>
-  <div class="experiencias">
-    <div class="experiencia">
-      <img src="https://source.unsplash.com/250x150/?hiking" alt="Trekking">
-      <h3>Trekking en los Andes</h3>
+  <!-- HERO -->
+  <section id="inicio" style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid #ececec;">
+    <div style="background:url('URL_FONDO_PLAYA') center/cover no-repeat; padding:80px 20px; text-align:center;">
+      <h1 style="margin:0; font-size:2.6em; color:#ffffff; text-shadow:0 2px 8px rgba(0,0,0,.35);">Allá Vamos Viajes y Turismo</h1>
+      <p style="margin:10px 0 22px; font-size:1.2em; color:#ffffff; text-shadow:0 2px 6px rgba(0,0,0,.35);">Tu aventura comienza aquí</p>
+      <a href="#paquetes" style="display:inline-block; background:#e67e22; color:#fff; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:600;">Ver paquetes</a>
     </div>
-    <div class="experiencia">
-      <img src="https://source.unsplash.com/250x150/?food" alt="Gastronomía">
-      <h3>Tours gastronómicos en Italia</h3>
+  </section>
+
+  <!-- Presentación y beneficios -->
+  <section style="display:grid; grid-template-columns:1.2fr 1fr; gap:22px; align-items:start; margin:22px 0;">
+    <div>
+      <h2 style="color:#2980b9; margin:0 0 8px;">Sobre nosotros</h2>
+      <p>En <strong>Allá Vamos</strong> diseñamos viajes completos a medida: alojamiento, desayunos, traslados, excursiones y asistencia durante todo el viaje. Trabajamos con hoteles y operadores confiables para que disfrutes sin sorpresas.</p>
+      <ul style="padding-left:18px;">
+        <li><strong>Personalización:</strong> adaptamos fechas, hotel y régimen.</li>
+        <li><strong>Soporte 24/7:</strong> te acompañamos en cada etapa.</li>
+        <li><strong>Precios claros:</strong> desglosamos impuestos y gestión.</li>
+        <li><strong>Pagos flexibles:</strong> seña y saldo en cuotas según acuerdo.</li>
+      </ul>
     </div>
-    <div class="experiencia">
-      <img src="https://source.unsplash.com/250x150/?cruise" alt="Crucero">
-      <h3>Cruceros por el Caribe</h3>
+    <div style="border:1px solid #ececec; border-radius:10px; padding:14px; background:#fafafa;">
+      <h3 id="beneficios" style="margin-top:0; color:#27ae60;">Ventajas clave</h3>
+      <p style="margin:0 0 6px;"><strong>Atención personalizada:</strong> WhatsApp directo con tu asesor.</p>
+      <p style="margin:0 0 6px;"><strong>Curaduría:</strong> solo hoteles con buena ubicación y reputación.</p>
+      <p style="margin:0;"><strong>Transparencia:</strong> condiciones y totales por persona y por 2 pax.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contacto -->
-<section id="contacto">
-  <h2>Contacto</h2>
-  <form>
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo" required>
-    <textarea placeholder="Mensaje" rows="5" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+  <!-- Paquetes destacados (cards) -->
+  <section id="paquetes" style="margin:26px 0;">
+    <h2 style="color:#8e44ad; margin:0 0 14px;">Paquetes destacados</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+      <div style="border:1px solid #ececec; border-radius:10px; overflow:hidden; background:#fff;">
+        <img src="URL_FOTO_MACEIO" alt="Maceió" style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+        <div style="padding:12px;">
+          <h3 style="margin:0 0 6px;">Maceió — Aqua Inn</h3>
+          <p style="margin:0 0 10px;">Desayuno incluido • A 200 m del mar</p>
+          <p style="margin:0; font-weight:600; color:#2c3e50;">Desde USD 1.145 por persona</p>
+        </div>
+      </div>
+      <div style="border:1px solid #ececec; border-radius:10px; overflow:hidden; background:#fff;">
+        <img src="URL_FOTO_MAR_HOTEL" alt="Maceio Mar Hotel" style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+        <div style="padding:12px;">
+          <h3 style="margin:0 0 6px;">Maceió — Maceio Mar Hotel</h3>
+          <p style="margin:0 0 10px;">Opciones: Desayuno, MAP y Frente al mar</p>
+          <p style="margin:0; font-weight:600; color:#2c3e50;">Desde USD 1.429 por persona</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Explora el Mundo. Síguenos en 
-    <a href="#">Instagram</a> | <a href="#">Facebook</a>
-  </p>
-</footer>
+  <!-- Catálogo completo (desde tu PDF) -->
+  <section style="margin:28px 0;">
+    <h2 style="color:#c0392b; margin:0 0 8px;">Catálogo completo — Maceió</h2>
+    <p style="margin:0 0 12px;">Precios por persona; incluye impuestos y gastos de gestión según se indica. Señal/entrega referencial incluida en cada fila.</p>
 
-</body>
-</html>
+    <!-- Tabla: Aqua Inn -->
+    <h3 style="margin:10px 0; color:#34495e;">Aqua Inn (Desayuno)</h3>
+    <div style="overflow:auto; border:1px solid #ececec; border-radius:10px;">
+      <table style="width:100%; border-collapse:collapse;">
+        <thead style="background:#f39c12; color:#fff;">
+          <tr>
+            <th style="text-align:left; padding:10px;">Salida</th>
+            <th style="text-align:left; padding:10px;">Hotel</th>
+            <th style="text-align:left; padding:10px;">Pensión</th>
+            <th style="text-align:right; padding:10px;">Precio x Pax</th>
+            <th style="text-align:right; padding:10px;">Impuestos</th>
+            <th style="text-align:right; padding:10px;">Gestión</th>
+            <th style="text-align:right; padding:10px;">Seña/Entrega</th>
+            <th style="text-align:right; padding:10px;">Total x Pax</th>
+            <th style="text-align:right; padding:10px;">Por 2 pax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top:1px solid #f2f2f2;">
+            <td style="padding:10px;">04/01/2026</td>
+            <td style="padding:10px;">Aqua Inn [1]</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.277,00</td>
+            <td style="padding:10px; text-align:right;">USD 160,00</td>
+            <td style="padding:10px; text-align:right;">USD 19,15</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.456,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.554,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">11/01/2026</td>
+            <td style="padding:10px;">Aqua Inn [2]</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.277,00</td>
+            <td style="padding:10px; text-align:right;">USD 160,00</td>
+            <td style="padding:10px; text-align:right;">USD 19,15</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.456,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.554,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">18/01/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.477,00</td>
+            <td style="padding:10px; text-align:right;">USD 160,00</td>
+            <td style="padding:10px; text-align:right;">USD 22,15</td>
+            <td style="padding:10px; text-align:right;">USD 650,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.659,15</td>
+            <td style="padding:10px; text-align:right;">USD 2.954,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">25/01/2026</td>
+            <td style="padding:10px;">Aqua Inn [3]</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.277,00</td>
+            <td style="padding:10px; text-align:right;">USD 160,00</td>
+            <td style="padding:10px; text-align:right;">USD 19,15</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.456,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.554,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">01/02/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">08/02/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.169,00</td>
+            <td style="padding:10px; text-align:right;">USD 155,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,50</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.342,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.338,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">15/02/2026 (Carnaval)</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.199,00</td>
+            <td style="padding:10px; text-align:right;">USD 156,21</td>
+            <td style="padding:10px; text-align:right;">USD 18,00</td>
+            <td style="padding:10px; text-align:right;">USD 550,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.374,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.398,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">22/02/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">01/03/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">08/03/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">15/03/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">22/03/2026</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">29/03/2026 (Semana Santa)</td>
+            <td style="padding:10px;">Aqua Inn</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.145,00</td>
+            <td style="padding:10px; text-align:right;">USD 153,00</td>
+            <td style="padding:10px; text-align:right;">USD 17,17</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.315,25</td>
+            <td style="padding:10px; text-align:right;">USD 2.290,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.92em; color:#7f8c8d; margin:8px 0;">[1][2][3] A 200 metros del mar — Aqua Inn Maceió.</p>
+
+    <!-- Tabla: Maceio Mar Hotel -->
+    <h3 style="margin:18px 0 8px; color:#34495e;">Maceio Mar Hotel</h3>
+    <div style="overflow:auto; border:1px solid #ececec; border-radius:10px;">
+      <table style="width:100%; border-collapse:collapse;">
+        <thead style="background:#95a5a6; color:#fff;">
+          <tr>
+            <th style="text-align:left; padding:10px;">Salida</th>
+            <th style="text-align:left; padding:10px;">Habitación / Plan</th>
+            <th style="text-align:left; padding:10px;">Pensión</th>
+            <th style="text-align:right; padding:10px;">Precio x Pax</th>
+            <th style="text-align:right; padding:10px;">Impuestos</th>
+            <th style="text-align:right; padding:10px;">Gestión</th>
+            <th style="text-align:right; padding:10px;">Seña/Entrega</th>
+            <th style="text-align:right; padding:10px;">Total x Pax</th>
+            <th style="text-align:right; padding:10px;">Por 2 pax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top:1px solid #f2f2f2;">
+            <td style="padding:10px;">04/01/2026</td>
+            <td style="padding:10px;">Estándar</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.429,00</td>
+            <td style="padding:10px; text-align:right;">USD 170,00</td>
+            <td style="padding:10px; text-align:right;">USD 21,43</td>
+            <td style="padding:10px; text-align:right;">USD 650,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.620,43</td>
+            <td style="padding:10px; text-align:right;">USD 2.858,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">04/01/2026</td>
+            <td style="padding:10px;">MAP</td>
+            <td style="padding:10px;">Media pensión</td>
+            <td style="padding:10px; text-align:right;">USD 1.525,00</td>
+            <td style="padding:10px; text-align:right;">USD 173,65</td>
+            <td style="padding:10px; text-align:right;">USD 22,87</td>
+            <td style="padding:10px; text-align:right;">USD 700,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.721,50</td>
+            <td style="padding:10px; text-align:right;">USD 3.050,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">04/01/2026</td>
+            <td style="padding:10px;">Frente al mar</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.453,00</td>
+            <td style="padding:10px; text-align:right;">USD 170,00</td>
+            <td style="padding:10px; text-align:right;">USD 22,00</td>
+            <td style="padding:10px; text-align:right;">USD 650,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.645,00</td>
+            <td style="padding:10px; text-align:right;">USD 2.906,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">18/01/2026</td>
+            <td style="padding:10px;">Frente al mar</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.653,00</td>
+            <td style="padding:10px; text-align:right;">USD 169,86</td>
+            <td style="padding:10px; text-align:right;">USD 24,80</td>
+            <td style="padding:10px; text-align:right;">USD 750,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.847,66</td>
+            <td style="padding:10px; text-align:right;">USD 3.306,00</td>
+          </tr>
+          <!-- Fechas con totales resumidos (datos parciales en PDF) -->
+          <tr>
+            <td style="padding:10px;">01/02/2026</td>
+            <td style="padding:10px;">Frente al mar</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">USD 1.279,00</td>
+            <td style="padding:10px; text-align:right;">USD 161,00</td>
+            <td style="padding:10px; text-align:right;">USD 19,18</td>
+            <td style="padding:10px; text-align:right;">USD 500,00</td>
+            <td style="padding:10px; text-align:right;">USD 1.459,18</td>
+            <td style="padding:10px; text-align:right;">USD 2.558,00</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">Carnaval 15/02/2026</td>
+            <td style="padding:10px;">Estándar</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">USD 2.666,00 (2 pax)</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">22/02/2026</td>
+            <td style="padding:10px;">Estándar/Dpto</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">USD 2.526–2.584 (2 pax)</td>
+          </tr>
+          <tr>
+            <td style="padding:10px;">01–29/03/2026</td>
+            <td style="padding:10px;">Estándar/Dpto</td>
+            <td style="padding:10px;">Desayuno</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">—</td>
+            <td style="padding:10px; text-align:right;">USD 2.498–2.558 (2 pax)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin:12px 0 0;"><a href="URL_PDF_CATALOGO" target="_blank" style="text-decoration:none; color:#e67e22; font-weight:600;">📥 Descargar catálogo completo (PDF)</a></p>
+    <p style="font-size:.9em; color:#7f8c8d; margin:8px 0 0;">Valores en USD. Sujetos a disponibilidad y modificación sin previo aviso. Tipo de cambio al momento del pago. Consultar condiciones de cancelación y equipaje.</p>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" style="margin:26px 0;">
+    <h2 style="color:#f39c12; margin:0 0 12px;">Galería</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;">
+      <img src="URL_FOTO_GAL_1" alt="Playa Maceió" style="width:100%; border-radius:10px; aspect-ratio:16/10; object-fit:cover;">
+      <img src="URL_FOTO_GAL_2" alt="Hotel" style="width:100%; border-radius:10px; aspect-ratio:16/10; object-fit:cover;">
+      <img src="URL_FOTO_GAL_3" alt="Excursión" style="width:100%; border-radius:10px; aspect-ratio:16/10; object-fit:cover;">
+      <img src="URL_FOTO_GAL_4" alt="Atardecer" style="width:100%; border-radius:10px; aspect-ratio:16/10; object-fit:cover;">
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" style="margin:26px 0;">
+    <h2 style="color:#34495e; margin:0 0 10px;">Experiencias de viajeros</h2>
+    <blockquote style="margin:0 0 8px; padding:10px 12px; border-left:4px solid #27ae60; background:#f8fff9; border-radius:8px;">“Todo impecable: hotel, traslados y atención. ¡Gracias!” — Laura & Martín</blockquote>
+    <blockquote style="margin:0; padding:10px 12px; border-left:4px solid #27ae60; background:#f8fff9; border-radius:8px;">“Súper claros con los costos y la seña. Recomendadísimos.” — Carlos P.</blockquote>
+  </section>
+
+  <!-- Reservar (CTA) -->
+  <section id="reservar" style="margin:26px 0; border:1px dashed #e67e22; border-radius:12px; padding:14px;">
+    <h2 style="color:#2980b9; margin:0 0 10px;">¿Listo para reservar?</h2>
+    <ol style="padding-left:18px; margin:0 0 12px;">
+      <li><strong>Elegí</strong> el paquete y la fecha.</li>
+      <li><strong>Escribinos</strong> por WhatsApp para confirmar disponibilidad.</li>
+      <li><strong>Señá</strong> y recibí tu voucher.</li>
+    </ol>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a href="https://wa.me/549XXXXXXXXXX?text=Hola%20All%C3%A1%20Vamos%2C%20quiero%20reservar%20Macei%C3%B3" target="_blank" style="background:#25d366; color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">📲 WhatsApp</a>
+      <a href="mailto:EMAIL@TUAGENCIA.COM?subject=Consulta%20All%C3%A1%20Vamos" style="background:#2c3e50; color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">✉️ Enviar email</a>
+    </div>
+    <p style="margin:10px 0 0; font-size:.9em; color:#7f8c8d;">También podés completar el formulario y te contactamos:</p>
+    <div style="border:1px solid #ececec; border-radius:10px; overflow:hidden;">
+      <iframe src="URL_FORMULARIO_GOOGLE_FORMS" width="100%" height="520" style="border:0;"></iframe>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" style="margin:26px 0; display:grid; grid-template-columns:1.1fr 1fr; gap:18px;">
+    <div style="border:1px solid #ececec; border-radius:12px; padding:14px;">
+      <h2 style="color:#8e44ad; margin:0 0 8px;">Contacto</h2>
+      <p style="margin:0 0 6px;">📞 WhatsApp: <a href="https://wa.me/549XXXXXXXXXX" target="_blank" style="color:#2c3e50; text-decoration:none;">+54 9 XXX XXX XXXX</a></p>
+      <p style="margin:0 0 6px;">📧 Email: <a href="mailto:EMAIL@TUAGENCIA.COM" style="color:#2c3e50; text-decoration:none;">EMAIL@TUAGENCIA.COM</a></p>
+      <p style="margin:0 0 6px;">📍 Dirección: DIRECCIÓN COMPLETA</p>
+      <p style="margin:0;">🕘 Horarios: Lunes a Viernes 9 a 18 h</p>
+    </div>
+    <div style="border:1px solid #ececec; border-radius:12px; overflow:hidden;">
+      <iframe src="URL_MAPA_GOOGLE_MAPS" width="100%" height="260" style="border:0;" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Legales -->
+  <section style="margin:18px 0; font-size:.9em; color:#7f8c8d;">
+    <h3 style="margin:0 0 6px; color:#34495e;">Condiciones</h3>
+    <ul style="padding-left:18px; margin:0;">
+      <li><strong>Vigencia:</strong> tarifas sujetas a disponibilidad y cambio sin previo aviso.</li>
+      <li><strong>Tipo de cambio:</strong> se aplica el del día de pago.</li>
+      <li><strong>Documentación:</strong> pasaporte vigente y requisitos de entrada del país.</li>
+      <li><strong>Equipaje:</strong> consultar franquicia según aerolínea y tarifa.</li>
+      <li><strong>Cancelaciones:</strong> según políticas del operador/hotel seleccionado.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-top:18px; padding:12px; text-align:center; background:#2c3e50; color:#ecf0f1; border-radius:10px;">
+    <p style="margin:0 0 6px;">Seguinos: <a href="URL_FACEBOOK" style="color:#ecf0f1; text-decoration:none;">Facebook</a> · <a href="URL_INSTAGRAM" style="color:#ecf0f1; text-decoration:none;">Instagram</a></p>
+    <p style="margin:0;">© 2025 Allá Vamos Viajes y Turismo — Todos los derechos reservados</p>
+  </footer>
+</div>
+<!-- ===== Fin del bloque ===== -->
